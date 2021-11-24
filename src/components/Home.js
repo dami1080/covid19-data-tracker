@@ -12,16 +12,16 @@ const Home = () => {
   const countries = useSelector((state) => state.countriesReducer);
   const dispatch = useDispatch();
 
-  let total = 0;
-  if (countries) {
-    countries.forEach((element) => {
-      total += element['All'].confirmed;
-    });
-  }
+  // let total = 0;
+  // if (countries) {
+  //   countries.forEach((element) => {
+  //     total += element['All'].confirmed;
+  //   });
+  // }
 
-  const handleFilter = (value) => {
-    dispatch(filterCountry(value));
-  };
+  // const handleFilter = (value) => {
+  //   dispatch(filterCountry(value));
+  // };
 
   return (
     <div>
