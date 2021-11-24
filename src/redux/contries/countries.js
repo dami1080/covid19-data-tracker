@@ -63,7 +63,7 @@ export const filterCountry = (value) => async (dispatch) => {
 const countriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_CONTINENT:
-      return action.payload;
+      return { continent: action.payload };
     case LOAD_COUNTRY:
       return { ...action.payload };
     case FILTER_DATA:
