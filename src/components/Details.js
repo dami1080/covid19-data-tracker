@@ -13,13 +13,13 @@ const Details = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadCountry(name));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
       <Navbar title="Country cases" left={<FaLessThan />} />
       <TotalCard name={country.country} total={country.confirmed} />
-      <ListGroup as="ul">
+      <ListGroup as="ul" className="p-2">
         <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
           <h3>Recovered</h3>
           <p>{country.recovered}</p>
