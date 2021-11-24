@@ -4,7 +4,7 @@ import React from 'react';
 import { MdMic, MdSettings } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 
-  const Navbar = (props) => {
+const Navbar = (props) => {
   if (props.title === 'Country cases') {
     return (
       <div className="d-flex justify-content-between align-items-center navbar">
