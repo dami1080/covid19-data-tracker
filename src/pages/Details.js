@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FaLessThan } from 'react-icons/fa';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Navbar from './Navbar';
-import TotalCard from './TotalCard';
+import Navbar from '../components/Navbar';
+import TotalCard from '../components/TotalCard';
 import { loadCountry } from '../redux/contries/countries';
 import covid from '../assets/covid.svg';
 
@@ -14,7 +14,7 @@ const Details = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadCountry(name));
-  }, [dispatch]);
+  }, [dispatch, name]);
 
   return (
     <div>
@@ -31,15 +31,15 @@ const Details = () => {
           <ListGroup as="ul" className="text-light">
             <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
               <h4>Recovered</h4>
-              <p>{country.recovered}</p>
+              <p>{country.recovered.toLocaleString()}</p>
             </ListGroup.Item>
             <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
               <h3>Deaths</h3>
-              <p>{country.deaths}</p>
+              <p>{country.deaths.toLocaleString()}</p>
             </ListGroup.Item>
             <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
               <h3>Population</h3>
-              <p>{country.population}</p>
+              <p>{country.population.toLocaleString()}</p>
             </ListGroup.Item>
             <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
               <h3>Location</h3>
