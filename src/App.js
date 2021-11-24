@@ -1,5 +1,5 @@
 import './styles/App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Home from './components/Home';
@@ -16,12 +16,14 @@ function App() {
   return (
     <div className="App text-light">
       <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-        </Routes>
-        <Routes>
-          <Route path="/details/:name" element={<Details />} />
-        </Routes>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/details/:name">
+            <Details />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
