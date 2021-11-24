@@ -2,7 +2,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { MdMic, MdSettings } from 'react-icons/md';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
@@ -30,14 +29,6 @@ const Navbar = (props) => {
     </div>
 
   );
-};
-
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  left: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-  ]).isRequired,
 };
 
 export default Navbar;
