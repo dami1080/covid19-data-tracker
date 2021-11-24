@@ -67,7 +67,7 @@ const countriesReducer = (state = initialState, action) => {
     case LOAD_COUNTRY:
       return { ...action.payload };
     case FILTER_DATA:
-      return action.payload;
+      return { continent: action.payload };
     default:
       return state;
   }
