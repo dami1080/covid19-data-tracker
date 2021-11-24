@@ -1,23 +1,42 @@
 /* eslint-disable dot-notation */
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Navbar from './Navbar';
 import CountryCard from './Card';
 import TotalCard from './TotalCard';
+import { filterCountry } from '../redux/contries/countries';
+import Filter from './Filter';
 
 const Home = () => {
   const countries = useSelector((state) => state.countriesReducer);
+  const dispatch = useDispatch();
+
+  let total = 0;
+  if (countries) {
+    countries.forEach((element) => {
+      total += element['All'].confirmed;
+    });
+  }
+
+  const handleFilter = (value) => {
+    dispatch(filterCountry(value));
+  };
 
   return (
     <div>
       <Navbar title="All Africa cases" left="2021" />
-      <div>
+      <div className="p-2">
         <div>
           <TotalCard name="Africa Total confirmed:" total={total} />
         </div>
-        {countries.map((country) => (
-          <CountryCard key={country['All'].country} country={country} />
-        ))}
+        <div>
+          <Filter handleFilter={handleFilter} />
+        </div>
+        <div className="d-flex flex-wrap">
+          {countries.map((country) => (
+            <CountryCard key={country['All'].country} country={country} />
+          ))}
+        </div>
       </div>
     </div>
   );

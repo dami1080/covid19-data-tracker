@@ -32,4 +32,12 @@ const Navbar = (props) => {
   );
 };
 
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  left: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
+};
+
 export default Navbar;

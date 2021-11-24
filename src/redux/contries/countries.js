@@ -35,9 +35,11 @@ const filterNumbers = (countries, value) => {
     case '99999':
       return countries.filter((country) => country.All.confirmed < 100000);
     case '100000':
-      return countries.filter((country) => country.All.confirmed >= 100000 && country.All.confirmed < 200000);
+      return countries.filter((country) => country.All.confirmed
+      >= 100000 && country.All.confirmed < 200000);
     case '200000':
-      return countries.filter((country) => country.All.confirmed >= 200000 && country.All.confirmed < 300000);
+      return countries.filter((country) => country.All.confirmed
+      >= 200000 && country.All.confirmed < 300000);
     case '300000':
       return countries.filter((country) => country.All.confirmed >= 300000);
     default:
