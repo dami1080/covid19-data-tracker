@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Home from './pages/Home';
 import Details from './pages/Details';
-import { loadContinent } from './redux/contries/countries';
+import { loadContinent } from './redux/countries/countries';
 
 function App() {
   const dispatch = useDispatch();

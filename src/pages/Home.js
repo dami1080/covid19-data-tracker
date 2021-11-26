@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Navbar from '../components/Navbar';
 import CountryCard from '../components/Card';
 import TotalCard from '../components/TotalCard';
-import { filterCountry } from '../redux/contries/countries';
+import { filterCountry } from '../redux/countries/countries';
 import Filter from '../components/Filter';
 import africa from '../assets/africa.svg';
 

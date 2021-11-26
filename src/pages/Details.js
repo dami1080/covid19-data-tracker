@@ -5,7 +5,7 @@ import { FaLessThan } from 'react-icons/fa';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Navbar from '../components/Navbar';
 import TotalCard from '../components/TotalCard';
-import { loadCountry } from '../redux/contries/countries';
+import { loadCountry } from '../redux/countries/countries';
 import covid from '../assets/covid.svg';
 
 const Details = () => {

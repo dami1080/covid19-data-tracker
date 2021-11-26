@@ -6,7 +6,6 @@ import covid from '../assets/covid.svg';
 
 const CountryCard = ({ country }) => {
   const page = `/details/${country.All.country}`;
-
   return (
     <Card key={country.All.country} className="card border-0 p-2 country-card">
       <Card.Link href={page}>
