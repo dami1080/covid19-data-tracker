@@ -51,6 +51,7 @@ export const filterCountry = (value) => async (dispatch) => {
   const continent = await getContinent();
   const countries = Object.values(continent);
   const filteredCountry = filterNumbers(countries, value);
+  console.log(filteredCountry);
 
   if (filteredCountry) {
     dispatch({

@@ -1,10 +1,16 @@
-import renderer from 'react-test-renderer';
-import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
 import Home from '../pages/Home';
+import store from '../redux/configureStore';
 
-const mockDispatch = jest.fn();
-jest.mock('react-redux', () => ({
-  useSelector: () => ([
+const LOAD_CONTINENT = 'covid-19-data-tracker/details/LOAD_CONTINENT';
+store.dispatch({
+  type: LOAD_CONTINENT,
+  payload: [
     {
       All: {
         confirmed: '204900',
@@ -21,50 +27,19 @@ jest.mock('react-redux', () => ({
         country: 'Morocco',
       },
     },
-  ]),
-  useDispatch: () => mockDispatch,
-}));
-
-jest.mock('../redux/countries/countries', () => ({
-  loadContinent: () => ([
-    {
-      All: {
-        confirmed: '204900',
-        recovered: '0',
-        deaths: '5862',
-        country: 'Algeria',
-      },
-    },
-    {
-      All: {
-        confirmed: '2222',
-        recovered: '0',
-        deaths: '5862',
-        country: 'Morocco',
-      },
-    },
-  ]),
-}));
+  ],
+});
 
 describe('Home page', () => {
-  test('Snapshot test', () => {
-    const home = renderer.create(
-      <Home />,
-    )
-      .toJSON();
-    expect(home).toMatchSnapshot();
-  });
-
-  test('UI test', () => {
-    render(<Home />);
-    expect(screen.getByRole('button')).toBeInTheDocument();
-  });
-
-  test('Fire filter event', () => {
-    render(<Home />);
-    fireEvent.select(screen.getByRole('button'), {
-      target: { eventKey: '99999' },
-    });
-    expect(screen.getByText(/Morocco/)).toBeInTheDocument();
+  test('mock redux store test', () => {
+    render(
+      <Provider store={store}>
+        <Router>
+          <Home />
+        </Router>
+      </Provider>,
+    );
+    screen.debug();
+    expect(screen.queryByText(/Morocco/)).toBeInTheDocument();
   });
 });
