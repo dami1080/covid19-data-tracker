@@ -19,7 +19,7 @@
 
 ## See Presentation
 
-[https://www.loom.com/share/5bd6c20d990e450f9dbeda49e3362b83]
+ [Video Link](https://www.loom.com/share/5bd6c20d990e450f9dbeda49e3362b83)
 
 ## Getting Started
 
