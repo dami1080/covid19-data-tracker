@@ -60,7 +60,7 @@ export const filterCountry = (value) => async (dispatch) => {
   }
 };
 
-const countriesReducer = (state = initialState, action) => {
+export const countriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_CONTINENT:
       return { continent: action.payload };
@@ -75,5 +75,3 @@ const countriesReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default countriesReducer;
