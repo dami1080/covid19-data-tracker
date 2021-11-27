@@ -1,10 +1,10 @@
 import renderer from 'react-test-renderer';
-import TotalCard from '../components/TotalCard';
+import CountryCard from '../components/Card';
 
 describe('Filter component', () => {
   test('Snapshot test', () => {
     const totalCard = renderer.create(
-      <TotalCard name="AFRICA" total="200987" />,
+      <CountryCard country={{ All: { country: 'Nigeria', confirmed: '1264' } }} />,
     )
       .toJSON();
     expect(totalCard).toMatchSnapshot();

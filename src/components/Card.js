@@ -10,20 +10,20 @@ const CountryCard = ({ country }) => {
   return (
     <Card key={country.All.country} className="card border-0 p-2 country-card">
       <Link to={page}>
-        <Card>
-          <div className="d-flex justify-content-between ps-3">
-            <img src={covid} alt="covid virus" className="map w-50 h-50" />
-            <FiArrowRightCircle />
-          </div>
-          <div className="text-end">
-            <Card.Title>{country.All.country}</Card.Title>
-            <Card.Body>
-              <Card.Text>
-                {country.All.confirmed.toLocaleString()}
-              </Card.Text>
-            </Card.Body>
-          </div>
-        </Card>
+
+        <div className="d-flex justify-content-between ps-3">
+          <img src={covid} alt="covid virus" className="map w-50 h-50" />
+          <FiArrowRightCircle />
+        </div>
+        <div className="text-end">
+          <Card.Title>{country.All.country}</Card.Title>
+          <Card.Body>
+            <Card.Text>
+              {country.All.confirmed.toLocaleString()}
+            </Card.Text>
+          </Card.Body>
+        </div>
+
       </Link>
     </Card>
   );
