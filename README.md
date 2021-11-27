@@ -17,6 +17,10 @@
 
 [COVID-19-Data-Tracker](https://serene-snyder-31641a.netlify.app/)
 
+## See Presentation
+
+[https://www.loom.com/share/5bd6c20d990e450f9dbeda49e3362b83]
+
 ## Getting Started
 
 ### To get a local copy run the following steps:
